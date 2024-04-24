@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Tilt+Neon&display=swap");
+* {
+  font-family: "Tilt Neon", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #870000;
+  background: linear-gradient(to right, #870000, #190A05, #870000);
+}
+
+body {
+  color: #333;
+}
+
+.win-container {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.9098039216);
+  border-radius: 20px;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+.win-container h1 {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
+.win-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+.win-container button:hover {
+  cursor: pointer;
+  color: white;
+  scale: 1.05;
+  background: black;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+.main-container .player-container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.75s;
+  text-align: center;
+  height: 100%;
+}
+.main-container .player-container .player {
+  width: 100%;
+  height: 50%;
+}
+.main-container .name {
+  font-size: 2.1rem;
+}
+.main-container .player-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #000000;
+  padding: 100px;
+  width: 65%;
+  height: 100%;
+  border-radius: 15px;
+  color: #fff;
+  border: 2px solid #870000;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+.main-container .player-wrapper #total-points {
+  font-size: 3rem;
+}
+.main-container .player-wrapper .current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: white;
+  padding: 1rem;
+}
+.main-container .player-wrapper .current-score {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.main-container .buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.main-container .btn {
+  transition-duration: 0.3s;
+  background-color: #fff;
+  border: none;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin: 10px;
+}
+.main-container .btn:hover {
+  cursor: pointer;
+  color: white;
+  scale: 1.05;
+  background: black;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+.main-container #main-button-new-game {
+  top: 70%;
+}
+.main-container #main-button-roll {
+  top: 45%;
+}
+.main-container #main-button-hold {
+  top: 55%;
+}
+.main-container .dice {
+  position: absolute;
+  top: 15%;
+  height: 10rem;
+}
+.main-container .hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .main-container .player-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+  }
+  .main-container .player-container .player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .main-container .player-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    width: 96%;
+  }
+  .main-container .player-wrapper .current-label {
+    font-size: 1.2rem;
+  }
+  .main-container .player-wrapper #total-points {
+    font-size: 2rem;
+  }
+  .main-container .player-wrapper .current-score {
+    font-size: 1.5rem;
+  }
+  .main-container .player {
+    width: 100%;
+  }
+  .main-container .name {
+    font-size: 2rem;
+  }
+  .main-container .buttons-wrapper {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+  }
+  .main-container .dice {
+    top: 5%;
+    /* Adjust position */
+    height: 7rem;
+    /* Adjust size */
+  }
+}
+@keyframes spinDice {
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    scale: 1.2;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1;
+  }
+}
+@keyframes winPopup {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */
